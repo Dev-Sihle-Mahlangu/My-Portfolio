@@ -4,7 +4,7 @@ const PROJECTS = [
   {
     category: 'Web App',
     title: 'Personal Portfolio Website',
-    objective: 'A responsive personal site to showcase projects and skills, built and deployed independently end to end.',
+    objective: 'I built this portfolio to establish a professional online presence where recruiters and employers can easily view my skills, projects, and experience.',
     tools: ['HTML', 'CSS', 'JavaScript', 'Vercel', 'Git'],
     impact: 'Live, publicly accessible site verified across mobile, tablet, and desktop breakpoints using Chrome DevTools.',
     link: 'https://github.com/Dev-Sihle-Mahlangu/My-Portfolio',
@@ -12,7 +12,7 @@ const PROJECTS = [
   {
     category: 'Web App',
     title: 'SkyFlow: Airline Management System',
-    objective: 'A management system for airline booking and operations, built with a relational database backend.',
+    objective: 'I built this system to strengthen my understanding of software development, relational databases, and managing airline booking operations.',
     tools: ['C#', 'SQL'],
     impact: 'Structured booking and flight data through a normalised relational schema.',
     link: 'https://github.com/Dev-Sihle-Mahlangu/SkyFlow-Airline-Management-System',
@@ -20,7 +20,7 @@ const PROJECTS = [
   {
     category: 'Full-Stack',
     title: 'Task Manager Web Application',
-    objective: 'A CRUD task-tracking app connecting a JavaScript frontend to a Node.js backend over a REST API.',
+    objective: 'I built this application to develop my full-stack skills by integrating a frontend, backend, database, and REST API into one solution.',
     tools: ['JavaScript', 'Node.js', 'SQL', 'REST API'],
     impact: 'Development run in Agile-inspired weekly sprints, tracked through GitHub Issues in a plan → build → review loop.',
     link: null,
@@ -28,7 +28,7 @@ const PROJECTS = [
   {
     category: 'Python',
     title: 'Interactive Quiz Application',
-    objective: 'A replayable quiz game with randomised question order and robust input handling.',
+    objective: 'I built this project to improve my Python programming skills by applying problem-solving, input validation, and error handling techniques.',
     tools: ['Python', 'Git'],
     impact: 'Eliminated unhandled exceptions across all user inputs through try/except validation, verified end-to-end.',
     link: 'https://github.com/Dev-Sihle-Mahlangu/Quiz-game',
