@@ -1,52 +1,41 @@
 const GROUPS = [
-  { label: 'Languages', items: ['Python', 'JavaScript', 'SQL', 'C#', 'Java', 'HTML', 'CSS', 'C++ (fundamentals)'] },
-  { label: 'Web Development', items: ['Responsive Design', 'REST APIs', 'Node.js (fundamentals)', 'Flexbox / Grid'] },
-  { label: 'Databases', items: ['Relational Schema Design', 'Normalisation'] },
-  { label: 'Version Control', items: ['Git', 'GitHub (branching, commits, PRs)'] },
-  { label: 'Methodologies', items: ['Agile / Scrum', 'Iterative Design', 'Debugging', 'Unit Testing'] },
-  { label: 'Tools', items: ['VS Code', 'Visual Studio', 'Google Workspace', 'Microsoft Office'] },
+  { label: 'Programming Languages', items: ['C#', 'Java', 'JavaScript', 'Python', 'C++', 'PHP'] },
+  { label: 'Frontend', items: ['React', 'Vite', 'HTML', 'CSS', 'Responsive Design'] },
+  { label: 'Backend & Frameworks', items: ['.NET', 'ASP.NET Core', 'Entity Framework Core', 'REST API Integration', 'Node.js'] },
+  { label: 'Databases', items: ['SQL', 'Microsoft SQL Server', 'SQLite', 'Relational Database Design', 'Normalisation', 'CRUD Operations'] },
+  { label: 'Development Practices', items: ['Object-Oriented Programming', 'Debugging', 'Software Testing', 'Application Validation', 'Agile Development'] },
+  { label: 'Tools & Deployment', items: ['Visual Studio', 'VS Code', 'Android Studio', 'Git', 'GitHub', 'Vercel'] },
 ]
 
 export default function Skills() {
   return (
-    <section id="skills">
+    <section id="skills" className="skills">
       <div className="wrap">
-        <p className="eyebrow">Toolbox</p>
+        <p className="eyebrow">Technical Skills</p>
         <h2 className="section-title">Skills &amp; Tools</h2>
-        <p className="section-sub">
-          What I reach for day to day, grouped by where it fits.
-        </p>
+        <p className="section-sub">What I use across desktop, web, mobile and database work, grouped by where it fits.</p>
 
         <div className="skill-groups">
           {GROUPS.map((g) => (
-            <div key={g.label} className="skill-group">
+            <div key={g.label} className="skill-group card">
               <h3 className="skill-label">{g.label}</h3>
-              <div className="skill-pills">
+              <ul className="skill-pills">
                 {g.items.map((i) => (
-                  <span key={i} className="pill">{i}</span>
+                  <li key={i} className="pill">{i}</li>
                 ))}
-              </div>
+              </ul>
             </div>
           ))}
         </div>
       </div>
 
       <style>{`
-        .skill-groups {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 28px 40px;
-        }
-        .skill-label {
-          font-size: 14px;
-          color: var(--blue-soft);
-          margin-bottom: 12px;
-          font-family: var(--font-display);
-        }
+        .skill-groups { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .skill-group { padding: 24px 22px; }
+        .skill-label { font-size: 15px; color: var(--blue-soft); margin-bottom: 14px; }
         .skill-pills { display: flex; flex-wrap: wrap; gap: 8px; }
-        @media (max-width: 640px) {
-          .skill-groups { grid-template-columns: 1fr; }
-        }
+        @media (max-width: 900px) { .skill-groups { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 600px) { .skill-groups { grid-template-columns: 1fr; } }
       `}</style>
     </section>
   )

@@ -1,81 +1,64 @@
-export default function ProjectCard({ category, title, objective, tools, impact, tech, link }) {
+export default function ProjectCard({ category, status, title, description, highlights, tech, links, note }) {
   return (
-    <div className="pcard card">
-      <span className="pcard-cat tag">{category}</span>
+    <article className="pcard card">
+      <div className="pcard-top">
+        <span className="tag">{category}</span>
+        {status && <span className="pcard-status mono">{status}</span>}
+      </div>
+
       <h3 className="pcard-title">{title}</h3>
+      <p className="pcard-desc">{description}</p>
 
-      {objective && (
-        <div className="pcard-row">
-          <span className="pcard-label">Objective</span>
-          <p>{objective}</p>
-        </div>
-      )}
+      <ul className="pcard-points">
+        {highlights.map((h) => (
+          <li key={h}>{h}</li>
+        ))}
+      </ul>
 
-      {tools && (
-        <div className="pcard-row">
-          <span className="pcard-label">Tools</span>
-          <div className="pcard-tools">
-            {tools.map((t) => (
-              <span key={t} className="pill">{t}</span>
-            ))}
-          </div>
-        </div>
-      )}
+      <ul className="pcard-tech" aria-label="Technologies used">
+        {tech.map((t) => (
+          <li key={t} className="pill">{t}</li>
+        ))}
+      </ul>
 
-      {impact && (
-        <div className="pcard-row">
-          <span className="pcard-label">Impact</span>
-          <p>{impact}</p>
-        </div>
-      )}
-
-      {link ? (
-        <a href={link} target="_blank" rel="noreferrer" className="btn btn-ghost pcard-btn">View Project</a>
-      ) : (
-        <span className="pcard-btn pcard-btn-disabled">Source not public</span>
-      )}
+      <div className="pcard-links">
+        {links && links.length > 0 ? (
+          links.map((l) => (
+            <a
+              key={l.label}
+              href={l.href}
+              target="_blank"
+              rel="noreferrer"
+              className={`btn btn-sm ${l.primary ? 'btn-primary' : 'btn-ghost'}`}
+              aria-label={`${l.label}: ${title} (opens in a new tab)`}
+            >
+              {l.label}
+            </a>
+          ))
+        ) : (
+          <span className="pcard-note mono">{note || 'No public link yet'}</span>
+        )}
+      </div>
 
       <style>{`
-        .pcard {
-          padding: 26px 24px;
-          display: flex;
-          flex-direction: column;
-          transition: transform 0.15s ease, border-color 0.15s ease;
-        }
+        .pcard { padding: 26px 24px; display: flex; flex-direction: column; transition: transform 0.15s ease, border-color 0.15s ease; }
         .pcard:hover { transform: translateY(-4px); border-color: var(--blue-soft); }
-        .pcard-cat { align-self: flex-start; margin-bottom: 14px; }
-        .pcard-title { font-size: 19px; margin-bottom: 16px; line-height: 1.3; }
-        .pcard-row { margin-bottom: 14px; }
-        .pcard-label {
-          display: block;
-          font-family: var(--font-mono);
-          font-size: 11px;
-          text-transform: uppercase;
-          letter-spacing: 0.06em;
-          color: var(--blue-soft);
-          margin-bottom: 6px;
+        .pcard-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+        .pcard-status { font-size: 11.5px; color: var(--blue-soft); }
+        .pcard-title { font-size: 19px; line-height: 1.3; margin-bottom: 10px; }
+        .pcard-desc { font-size: 14px; color: var(--text-dim); line-height: 1.65; margin-bottom: 14px; }
+        .pcard-points { margin-bottom: 18px; display: flex; flex-direction: column; gap: 8px; }
+        .pcard-points li { position: relative; padding-left: 16px; font-size: 13.5px; color: var(--text-dim); line-height: 1.6; }
+        .pcard-points li::before {
+          content: '';
+          position: absolute; left: 0; top: 9px;
+          width: 6px; height: 6px; border-radius: 50%;
+          background: var(--cyan);
         }
-        .pcard-row p {
-          font-size: 13.5px;
-          color: var(--text-dim);
-          line-height: 1.6;
-        }
-        .pcard-tools { display: flex; flex-wrap: wrap; gap: 6px; }
-        .pcard-btn {
-          margin-top: auto;
-          padding-top: 18px;
-          justify-content: center;
-          text-align: center;
-        }
-        .pcard-btn-disabled {
-          margin-top: auto;
-          padding-top: 18px;
-          font-size: 13px;
-          color: var(--text-faint);
-          text-align: center;
-          font-family: var(--font-mono);
-        }
+        .pcard-tech { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+        .pcard-links { margin-top: auto; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+        .pcard-note { font-size: 12.5px; color: var(--text-faint); }
       `}</style>
-    </div>
+    </article>
   )
 }

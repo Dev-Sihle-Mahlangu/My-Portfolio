@@ -1,106 +1,70 @@
+import portraitJpg from '../assets/sihle-portrait.jpg'
+import portraitWebp from '../assets/sihle-portrait.webp'
+import { CV_URL, CV_FILENAME } from '../data/site.js'
+
 export default function Hero() {
   return (
     <section id="top" className="hero">
       <div className="hero-glow" aria-hidden="true" />
       <div className="wrap hero-wrap">
         <div className="hero-copy">
-          <p className="eyebrow left">Open to Internships · Johannesburg, ZA</p>
+          <p className="eyebrow left">Open to junior developer and WIL roles</p>
           <h1 className="hero-title">
             Hi, I'm <span className="highlight">Sihle</span>,<br />
-            final-year IT student<br />&amp; software developer.
+            Software Developer<br />&amp; final-year IT student.
           </h1>
           <p className="hero-text">
-            I build things end-to-end: relational schemas, REST APIs, and the
-            interfaces on top of them, with every project run through Git from
-            first commit to deploy. Currently finishing my BSc in Information
-            Technology (Software Development) at Richfield, and looking for a
-            team to learn from as an intern.
+            I build desktop, web and Android applications, with C#, object-oriented
+            design and relational databases at the core of my work. I'm finishing my
+            BSc in Information Technology at Richfield in Johannesburg and looking
+            for a junior developer, graduate or Work Integrated Learning placement.
           </p>
           <div className="hero-actions">
-            <a href="#projects" className="btn btn-primary">View Projects</a>
-            <a href="#contact" className="btn btn-ghost">Get in Touch</a>
+            <a href={CV_URL} download={CV_FILENAME} className="btn btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 20h16" />
+              </svg>
+              Download CV
+            </a>
+            <a href="#projects" className="btn btn-ghost">View Projects</a>
           </div>
+          <p className="hero-meta mono">Johannesburg, South Africa</p>
         </div>
 
-        <div className="hero-art" aria-hidden="true">
-          <svg viewBox="0 0 420 380" width="100%" height="100%">
-            <defs>
-              <linearGradient id="panelGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stopColor="#161d3a" />
-                <stop offset="1" stopColor="#0d1226" />
-              </linearGradient>
-              <linearGradient id="barGrad" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0" stopColor="#3f6bff" />
-                <stop offset="1" stopColor="#45e0c8" />
-              </linearGradient>
-            </defs>
-
-            <rect x="30" y="30" width="360" height="260" rx="16" fill="url(#panelGrad)" stroke="#232c4d" />
-            <rect x="30" y="30" width="360" height="34" rx="16" fill="#161d3a" stroke="#232c4d" />
-            <circle cx="52" cy="47" r="4.5" fill="#f85149" opacity="0.8" />
-            <circle cx="67" cy="47" r="4.5" fill="#d29922" opacity="0.8" />
-            <circle cx="82" cy="47" r="4.5" fill="#45e0c8" opacity="0.8" />
-
-            <rect x="52" y="86" width="150" height="14" rx="4" fill="#3f6bff" opacity="0.85" />
-            <rect x="52" y="110" width="230" height="9" rx="3" fill="#2a3358" />
-            <rect x="52" y="126" width="180" height="9" rx="3" fill="#2a3358" />
-
-            <rect x="52" y="156" width="98" height="72" rx="10" fill="#0d1226" stroke="#232c4d" />
-            <rect x="64" y="168" width="74" height="8" rx="3" fill="url(#barGrad)" />
-            <rect x="64" y="184" width="50" height="6" rx="3" fill="#2a3358" />
-            <rect x="64" y="196" width="60" height="6" rx="3" fill="#2a3358" />
-
-            <rect x="161" y="156" width="98" height="72" rx="10" fill="#0d1226" stroke="#232c4d" />
-            <rect x="173" y="168" width="74" height="8" rx="3" fill="#45e0c8" />
-            <rect x="173" y="184" width="50" height="6" rx="3" fill="#2a3358" />
-            <rect x="173" y="196" width="60" height="6" rx="3" fill="#2a3358" />
-
-            <rect x="270" y="156" width="98" height="72" rx="10" fill="#0d1226" stroke="#232c4d" />
-            <rect x="282" y="168" width="74" height="8" rx="3" fill="#93aaff" />
-            <rect x="282" y="184" width="50" height="6" rx="3" fill="#2a3358" />
-            <rect x="282" y="196" width="60" height="6" rx="3" fill="#2a3358" />
-
-            <rect x="52" y="248" width="316" height="20" rx="6" fill="#0d1226" stroke="#232c4d" />
-            <rect x="60" y="254" width="8" height="8" rx="2" fill="#45e0c8" />
-            <rect x="76" y="255" width="120" height="6" rx="3" fill="#2a3358" />
-
-            <g transform="translate(258,268)">
-              <rect width="132" height="66" rx="12" fill="#10162c" stroke="#3f6bff" strokeOpacity="0.5" />
-              <text x="14" y="26" fontFamily="JetBrains Mono, monospace" fontSize="11" fill="#45e0c8">$ git push</text>
-              <text x="14" y="44" fontFamily="JetBrains Mono, monospace" fontSize="11" fill="#93aaff">main → origin</text>
-              <circle cx="112" cy="18" r="4" fill="#45e0c8" />
-            </g>
-
-            <g transform="translate(14,268)">
-              <rect width="150" height="64" rx="12" fill="#10162c" stroke="#232c4d" />
-              <path d="M18 40 L18 16 L38 16" stroke="#3f6bff" strokeWidth="2" fill="none" strokeLinecap="round" />
-              <circle cx="38" cy="16" r="3.5" fill="#3f6bff" />
-              <circle cx="18" cy="40" r="3.5" fill="#93aaff" />
-              <circle cx="18" cy="28" r="3.5" fill="#93aaff" />
-              <text x="52" y="30" fontFamily="JetBrains Mono, monospace" fontSize="11" fill="#eef1fb">feature</text>
-              <text x="52" y="46" fontFamily="JetBrains Mono, monospace" fontSize="11" fill="#5c6690">merged</text>
-            </g>
-          </svg>
-        </div>
+        <figure className="hero-photo">
+          <div className="photo-frame">
+            <picture>
+              <source srcSet={portraitWebp} type="image/webp" />
+              <img
+                src={portraitJpg}
+                alt="Portrait of Sihle Mahlangu in a navy blazer and white shirt"
+                width="720"
+                height="900"
+                fetchpriority="high"
+              />
+            </picture>
+          </div>
+          <span className="chip chip-top mono"><i aria-hidden="true" /> Open to work</span>
+          <span className="chip chip-bottom mono">C# &middot; .NET &middot; SQL Server</span>
+        </figure>
       </div>
 
       <style>{`
-        .hero { position: relative; padding-top: 96px; overflow: hidden; }
+        .hero { position: relative; padding-top: 80px; padding-bottom: 88px; overflow: hidden; }
         .hero-glow {
           position: absolute;
-          top: -180px;
-          right: -160px;
-          width: 560px;
-          height: 560px;
-          background: radial-gradient(circle, rgba(63,107,255,0.28), transparent 70%);
-          filter: blur(10px);
+          top: -200px;
+          right: -180px;
+          width: 600px;
+          height: 600px;
+          background: radial-gradient(circle, rgba(63,107,255,0.26), transparent 70%);
           pointer-events: none;
         }
         .hero-wrap {
           position: relative;
           display: grid;
-          grid-template-columns: 1.05fr 1fr;
-          gap: 56px;
+          grid-template-columns: 1.1fr 0.9fr;
+          gap: 64px;
           align-items: center;
         }
         .hero-title {
@@ -112,14 +76,67 @@ export default function Hero() {
           color: var(--text-dim);
           font-size: 16px;
           line-height: 1.75;
-          max-width: 480px;
+          max-width: 500px;
           margin-bottom: 32px;
         }
         .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
-        .hero-art { width: 100%; }
+        .hero-meta { margin-top: 28px; font-size: 12.5px; color: var(--text-faint); }
+
+        .hero-photo {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 360px;
+}
+
+.photo-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+}
+
+.photo-frame::before {
+  display: none;
+}
+
+.photo-frame picture {
+  display: block;
+}
+
+.photo-frame img {
+  display: block;
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: 14px;
+}
+        .chip {
+          position: absolute;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          font-size: 12px;
+          padding: 8px 14px;
+          border-radius: 999px;
+          background: rgba(11, 16, 36, 0.92);
+          border: 1px solid var(--border);
+          backdrop-filter: blur(6px);
+          color: var(--text);
+        }
+        .chip i { width: 8px; height: 8px; border-radius: 50%; background: var(--cyan); }
+        .chip-top { top: 18px; right: -10px; }
+        .chip-bottom { bottom: 22px; left: -14px; color: var(--blue-soft); }
+
         @media (max-width: 880px) {
-          .hero-wrap { grid-template-columns: 1fr; gap: 40px; }
-          .hero-art { max-width: 420px; margin: 0 auto; }
+          .hero { padding-top: 48px; }
+          .hero-wrap { grid-template-columns: 1fr; gap: 44px; }
+          .hero-photo { order: -1; max-width: 280px; }
+          .chip-top { right: -6px; }
+          .chip-bottom { left: -6px; }
         }
       `}</style>
     </section>

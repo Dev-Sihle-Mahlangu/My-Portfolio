@@ -1,41 +1,34 @@
-# Sihle Mahlangu — Portfolio
+# Sihle Mahlangu | Portfolio
 
-A personal portfolio site built with React + Vite, styled around a git/terminal
-theme (commit log project cards, a typed terminal hero, a directory-listing
-skills section) that reflects a Git-first workflow.
+Personal developer portfolio built with React and Vite.
 
-## Getting started
+## Run locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open the printed local URL (usually http://localhost:5173).
+Open the local URL it prints (usually http://localhost:5173).
 
-## Build for production
+## Build and deploy
 
 ```bash
 npm run build
 npm run preview
 ```
 
-The production build is output to `dist/`. Deploy `dist/` to Vercel, Netlify,
-GitHub Pages, or any static host.
+Vercel detects Vite automatically. Push to GitHub and import the repo.
 
-## Editing content
+## Where to edit things
 
-- **Hero / typed intro:** `src/components/Terminal.jsx`
-- **About:** `src/components/About.jsx`
-- **Projects:** `src/components/Projects.jsx` (edit the `PROJECTS` array — add
-  a project by adding an object with `hash`, `title`, `tech`, `bullets`, `link`)
-- **Skills:** `src/components/Skills.jsx` (edit the `GROUPS` array)
-- **Education:** `src/components/Education.jsx`
-- **Contact links:** `src/components/Contact.jsx` (edit the `LINKS` array)
-- **Colors / fonts / spacing:** `src/index.css` (CSS custom properties at the top)
-
-## Stack
-
-- React 18
-- Vite 5
-- Plain CSS (component-scoped via inline `<style>` tags, no framework)
+- Contact details and file links: `src/data/site.js`
+- CV PDF: replace `public/Sihle_Mahlangu_CV.pdf` (keep the same filename)
+- Transcript PDF: replace `public/Sihle_Mahlangu_Academic_Transcript.pdf`
+  (redact ID and student numbers first)
+- Portrait: replace the files in `src/assets/` (`sihle-portrait.jpg` and `.webp`, 4:5 ratio)
+- Transcript marks: `RECORD` in `src/components/Transcript.jsx`
+- Projects: `PROJECTS` in `src/components/Projects.jsx`
+- Skills: `GROUPS` in `src/components/Skills.jsx`
+- Colours and fonts: CSS variables at the top of `src/index.css`
+- Logo: `src/components/Logo.jsx` and `public/favicon.svg`
